@@ -7,9 +7,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="468.0" prefWidth="310.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.calculator.CalcController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#AnchorePanePressed" onKeyTyped="#AnchorePaneTyped" prefHeight="468.0" prefWidth="310.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.calculator.CalcController">
    <children>
-      <TextField fx:id="textField" alignment="CENTER_RIGHT" editable="false" prefHeight="80.0" prefWidth="320.0" style="-fx-background-color: black;" styleClass="TextField" stylesheets="@CalcStyle.css">
+      <TextField fx:id="textField" alignment="CENTER_RIGHT" editable="false" onKeyPressed="#AnchorePanePressed" onKeyTyped="#AnchorePaneTyped" prefHeight="80.0" prefWidth="320.0" style="-fx-background-color: black;" styleClass="TextField" stylesheets="@CalcStyle.css">
          <font>
             <Font name="Arial" size="48.0" />
          </font>

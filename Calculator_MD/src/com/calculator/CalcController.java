@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 
 public class CalcController implements Initializable {
 	
@@ -17,7 +18,8 @@ public class CalcController implements Initializable {
 	char operation;
 	String result;
 	double per;
-	
+
+
     @FXML
     private TextField textField;
     @FXML
@@ -60,6 +62,144 @@ public class CalcController implements Initializable {
     private Button ButtonBackSpace;
     @FXML
     private Button ButtonPlusMinus;
+
+    @FXML
+    void AnchorePanePressed(KeyEvent event) {
+    	switch (event.getCode()) {
+    	case BACK_SPACE:
+    		text = "";
+    		if(textField.getText().length() > 0){
+        		StringBuilder strB = new StringBuilder(textField.getText());
+        		strB.deleteCharAt(textField.getText().length() - 1);
+        		text = strB.toString();
+        		textField.setText(text);
+        		break;
+    		}
+    	case ENTER:
+    		try {
+    			switch (operation) {
+    			case '+':
+        			num2 = Float.parseFloat(textField.getText());
+        			text = "" + (num1 + num2);
+        			break; 
+    			case '-':
+        			num2 = Float.parseFloat(textField.getText());
+        			text = "" + (num1 - num2);
+        			break;
+        		case '×':
+        			num2 = Float.parseFloat(textField.getText());
+        			text = "" + (num1 * num2);
+        			break;
+        		case '÷':
+        			num2 = Float.parseFloat(textField.getText());
+        			text = "" + (num1 / num2);
+        			break;
+        		default:
+        			text = "Syntax error";
+        			break;
+        		}
+        	}
+        	catch(java.lang.NumberFormatException error) {
+        		text = "Syntax error";
+    			}
+    		if(text.length() > 10)
+        		textField.setText(text.substring(0, 10));
+        	textField.setText(text);
+        	result = text;
+		default:
+			break;
+    		}
+    }
+    @FXML
+    void AnchorePaneTyped(KeyEvent event) {
+    	switch (event.getCharacter()) {
+    	case "0":
+    		resultEqualsText();
+        	text += "0";
+            textField.setText(text);
+            break;
+    	case "1":
+    		resultEqualsText();
+        	text += "1";
+        	textField.setText(text);
+        	break;
+    	case "2":
+    		resultEqualsText();
+        	text += "2";
+        	textField.setText(text);
+        	break;
+    	case "3":
+    		resultEqualsText();
+        	text += "3";
+        	textField.setText(text);
+        	break;
+    	case "4":
+    		resultEqualsText();
+        	text += "4";
+        	textField.setText(text);
+        	break;
+    	case "5":
+    		resultEqualsText();
+        	text += "5";
+        	textField.setText(text);
+        	break;
+    	case "6":
+    		resultEqualsText();
+        	text += "6";
+        	textField.setText(text);
+        	break;
+    	case "7":
+    		resultEqualsText();
+        	text += "7";
+        	textField.setText(text);
+        	break;
+    	case "8":
+    		resultEqualsText();
+        	text += "8";
+        	textField.setText(text);
+        	break;
+    	case "9":
+    		resultEqualsText();
+        	text += "9";
+        	textField.setText(text);
+        	break;
+    	case "+":
+    		if(text.length() > 0)
+        		num1 = Float.parseFloat(textField.getText());
+        		operation = '+';
+        		text = "";
+        		textField.setText("+");
+        		break;
+    	case "/":
+    		if(text.length() > 0)
+        		num1 = Float.parseFloat(textField.getText());
+        		operation = '÷';
+        		text = "";
+        		textField.setText("÷");
+        		break;
+    	case "*":
+    		if(text.length() > 0)
+        		num1 = Float.parseFloat(textField.getText());
+        		operation = '×';
+        		text = "";
+        		textField.setText("×");
+        		break;
+    	case "-":
+    		if(text.length() > 0)
+        		num1 = Float.parseFloat(textField.getText());
+        		operation = '-';
+        		text = "";
+        		textField.setText("-");
+        		break;
+    	case ".":
+    		if(!text.contains("."))
+        		text += ".";
+        	else
+        		text += "";
+        	textField.setText(text);
+        	break;
+    	}
+    }
     @FXML
     void Button0Action(ActionEvent event) {
     	resultEqualsText();
@@ -211,7 +351,6 @@ public class CalcController implements Initializable {
     		case '÷':
     			num2 = Float.parseFloat(textField.getText());
     			text = "" + (num1 / num2);
-    	        System.out.println(text.length()>10);
     			break;
     		default:
     			text = "Syntax error";
