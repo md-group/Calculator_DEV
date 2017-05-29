@@ -1,0 +1,13 @@
+AnchorPane{
+	-fx-padding: 0;
+	-fx-background-color: white;
+}
+
+*{
+	-fx-border-radius: 0 0 0 0;
+	-fx-background-radius: 0 0 0 0;
+}
+.TextField{
+	-fx-text-fill: white;
+}
+
