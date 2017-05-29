@@ -16,6 +16,7 @@ public class CalcController implements Initializable {
 	double num2 = 0;
 	char operation;
 	String result;
+	double per;
 	
     @FXML
     private TextField textField;
@@ -52,9 +53,9 @@ public class CalcController implements Initializable {
     @FXML
     private Button ButtonDivide;
     @FXML
-    private Button ButtonClear1;
+    private Button ButtonClear;
     @FXML
-    private Button ButtonClear2;
+    private Button ButtonPercent;
     @FXML
     private Button ButtonBackSpace;
     @FXML
@@ -129,8 +130,8 @@ public class CalcController implements Initializable {
     }
     @FXML
     void ButtonCommaAction(ActionEvent event) {
-    	if(!text.contains(","))
-    		text += ",";
+    	if(!text.contains("."))
+    		text += ".";
     	else
     		text += "";
     	textField.setText(text);
@@ -165,6 +166,15 @@ public class CalcController implements Initializable {
     	textField.setText(text);
     }
     @FXML
+    void ButtonPercentAction(ActionEvent event) {
+    	if(text.length() > 0)
+    		per = Float.parseFloat(textField.getText());
+    		text = "" + per*num1/100;
+    		if(text.length() > 10)
+    			textField.setText(text.substring(0, 8));
+    		textField.setText(text);
+    }
+    @FXML
     void ButtonBackSpaceAction(ActionEvent event) {
     	text = "";
     	if(textField.getText().length() > 0){
@@ -181,8 +191,6 @@ public class CalcController implements Initializable {
     		sign = sign * (-1);
     		textField.setText(String.valueOf(sign));
     	}
-    	
-    	
     }
     @FXML
     void ButtonEqualAction(ActionEvent event) {
@@ -203,6 +211,7 @@ public class CalcController implements Initializable {
     		case '÷':
     			num2 = Float.parseFloat(textField.getText());
     			text = "" + (num1 / num2);
+    	        System.out.println(text.length()>10);
     			break;
     		default:
     			text = "Syntax error";
@@ -212,6 +221,8 @@ public class CalcController implements Initializable {
     	catch(java.lang.NumberFormatException error) {
     		text = "Syntax error";
     	}
+    	if(text.length() > 10)
+    		textField.setText(text.substring(0, 10));
     	textField.setText(text);
     	result = text;
     }

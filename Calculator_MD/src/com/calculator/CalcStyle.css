@@ -10,4 +10,16 @@ AnchorPane{
 .TextField{
 	-fx-text-fill: white;
 }
+.Button.ButtonPlusMinus{
+	-fx-border-color: black;
+	-fx-border-width: 1 1 1 1;
+}
+.Button.Button0{
+	-fx-border-color: black;
+	-fx-border-width: 1 0 1 0;
+}
+.Button.ButtonEqual{
+	-fx-border-color: black;
+	-fx-border-width: 1 1 1 0;
+}
 

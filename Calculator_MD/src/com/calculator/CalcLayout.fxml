@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.Blend?>
-<?import javafx.scene.effect.Light.Distant?>
-<?import javafx.scene.effect.Lighting?>
-<?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="310.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.calculator.CalcController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="468.0" prefWidth="310.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.calculator.CalcController">
    <children>
-      <TextField fx:id="textField" alignment="CENTER_RIGHT" editable="false" prefHeight="80.0" prefWidth="320.0" style="-fx-background-color: black;" text="545165651">
+      <TextField fx:id="textField" alignment="CENTER_RIGHT" editable="false" prefHeight="80.0" prefWidth="320.0" style="-fx-background-color: black;" styleClass="TextField" stylesheets="@CalcStyle.css">
          <font>
             <Font name="Arial" size="48.0" />
          </font>
@@ -20,445 +17,245 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </TextField>
-      <Button fx:id="ButtonPlusMinus" layoutY="400.0" mnemonicParsing="false" onAction="#ButtonPlusMinusAction" prefHeight="80.0" prefWidth="80.0" text="±">
+      <Button fx:id="ButtonPlusMinus" layoutY="400.0" mnemonicParsing="false" onAction="#ButtonPlusMinusAction" prefHeight="80.0" prefWidth="80.0" style="-fx-background-color: #d9d9d9;" stylesheets="@CalcStyle.css" text="±">
          <font>
             <Font size="30.0" />
          </font>
-         <effect>
-            <Blend opacity="0.8">
-               <topInput>
-                  <Lighting>
-                     <bumpInput>
-                        <Shadow />
-                     </bumpInput>
-                     <light>
-                        <Light.Distant />
-                     </light>
-                  </Lighting>
-               </topInput>
-            </Blend>
-         </effect>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <styleClass>
+            <String fx:value="Button" />
+            <String fx:value="ButtonPlusMinus" />
+         </styleClass>
       </Button>
-      <Button fx:id="Button0" layoutX="80.0" layoutY="400.0" mnemonicParsing="false" onAction="#Button0Action" prefHeight="80.0" prefWidth="80.0" text="0">
+      <Button fx:id="Button0" layoutX="80.0" layoutY="400.0" mnemonicParsing="false" onAction="#Button0Action" prefHeight="80.0" prefWidth="80.0" style="-fx-background-color: #d9d9d9;" stylesheets="@CalcStyle.css" text="0">
          <font>
             <Font name="Arial Bold" size="30.0" />
          </font>
-         <effect>
-            <Blend opacity="0.8">
-               <topInput>
-                  <Lighting>
-                     <bumpInput>
-                        <Shadow />
-                     </bumpInput>
-                     <light>
-                        <Light.Distant />
-                     </light>
-                  </Lighting>
-               </topInput>
-            </Blend>
-         </effect>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <styleClass>
+            <String fx:value="Button" />
+            <String fx:value="Button0" />
+         </styleClass>
       </Button>
-      <Button fx:id="ButtonComma" layoutX="160.0" layoutY="400.0" mnemonicParsing="false" onAction="#ButtonCommaAction" prefHeight="80.0" prefWidth="80.0" text=",">
+      <Button fx:id="ButtonComma" layoutX="160.0" layoutY="400.0" mnemonicParsing="false" onAction="#ButtonCommaAction" prefHeight="80.0" prefWidth="80.0" style="-fx-background-color: #d9d9d9;" stylesheets="@CalcStyle.css" text=",">
          <font>
             <Font name="Arial Bold" size="30.0" />
          </font>
-         <effect>
-            <Blend opacity="0.8">
-               <topInput>
-                  <Lighting>
-                     <bumpInput>
-                        <Shadow />
-                     </bumpInput>
-                     <light>
-                        <Light.Distant />
-                     </light>
-                  </Lighting>
-               </topInput>
-            </Blend>
-         </effect>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <styleClass>
+            <String fx:value="Button" />
+            <String fx:value="ButtonPlusMinus" />
+         </styleClass>
       </Button>
-      <Button fx:id="ButtonEqual" layoutX="240.0" layoutY="400.0" mnemonicParsing="false" onAction="#ButtonEqualAction" prefHeight="80.0" prefWidth="80.0" text="=">
+      <Button fx:id="ButtonEqual" layoutX="240.0" layoutY="400.0" mnemonicParsing="false" onAction="#ButtonEqualAction" prefHeight="80.0" prefWidth="80.0" style="-fx-background-color: #ed7d31;" stylesheets="@CalcStyle.css" text="=">
          <font>
             <Font name="Arial" size="30.0" />
          </font>
-         <effect>
-            <Blend opacity="0.8">
-               <topInput>
-                  <Lighting>
-                     <bumpInput>
-                        <Shadow />
-                     </bumpInput>
-                     <light>
-                        <Light.Distant />
-                     </light>
-                  </Lighting>
-               </topInput>
-            </Blend>
-         </effect>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <styleClass>
+            <String fx:value="Button" />
+            <String fx:value="ButtonEqual" />
+         </styleClass>
       </Button>
-      <Button fx:id="Button1" layoutY="320.0" mnemonicParsing="false" onAction="#Button1Action" prefHeight="80.0" prefWidth="80.0" text="1">
+      <Button fx:id="Button1" layoutY="320.0" mnemonicParsing="false" onAction="#Button1Action" prefHeight="80.0" prefWidth="80.0" style="-fx-background-color: #d9d9d9;" stylesheets="@CalcStyle.css" text="1">
          <font>
             <Font name="Arial Bold" size="30.0" />
          </font>
-         <effect>
-            <Blend opacity="0.8">
-               <topInput>
-                  <Lighting>
-                     <bumpInput>
-                        <Shadow />
-                     </bumpInput>
-                     <light>
-                        <Light.Distant />
-                     </light>
-                  </Lighting>
-               </topInput>
-            </Blend>
-         </effect>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <styleClass>
+            <String fx:value="Button" />
+            <String fx:value="ButtonPlusMinus" />
+         </styleClass>
       </Button>
-      <Button fx:id="Button2" layoutX="80.0" layoutY="320.0" mnemonicParsing="false" onAction="#Button2Action" prefHeight="80.0" prefWidth="80.0" text="2">
+      <Button fx:id="Button2" layoutX="80.0" layoutY="320.0" mnemonicParsing="false" onAction="#Button2Action" prefHeight="80.0" prefWidth="80.0" style="-fx-background-color: #d9d9d9;" stylesheets="@CalcStyle.css" text="2">
          <font>
             <Font name="Arial Bold" size="30.0" />
          </font>
-         <effect>
-            <Blend opacity="0.8">
-               <topInput>
-                  <Lighting>
-                     <bumpInput>
-                        <Shadow />
-                     </bumpInput>
-                     <light>
-                        <Light.Distant />
-                     </light>
-                  </Lighting>
-               </topInput>
-            </Blend>
-         </effect>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <styleClass>
+            <String fx:value="Button" />
+            <String fx:value="Button0" />
+         </styleClass>
       </Button>
-      <Button fx:id="Button3" layoutX="160.0" layoutY="320.0" mnemonicParsing="false" onAction="#Button3Action" prefHeight="80.0" prefWidth="80.0" text="3">
+      <Button fx:id="Button3" layoutX="160.0" layoutY="320.0" mnemonicParsing="false" onAction="#Button3Action" prefHeight="80.0" prefWidth="80.0" style="-fx-background-color: #d9d9d9;" stylesheets="@CalcStyle.css" text="3">
          <font>
             <Font name="Arial Bold" size="30.0" />
          </font>
-         <effect>
-            <Blend opacity="0.8">
-               <topInput>
-                  <Lighting>
-                     <bumpInput>
-                        <Shadow />
-                     </bumpInput>
-                     <light>
-                        <Light.Distant />
-                     </light>
-                  </Lighting>
-               </topInput>
-            </Blend>
-         </effect>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <styleClass>
+            <String fx:value="Button" />
+            <String fx:value="ButtonPlusMinus" />
+         </styleClass>
       </Button>
-      <Button fx:id="ButtonAdd" layoutX="240.0" layoutY="320.0" mnemonicParsing="false" onAction="#ButtonAddAction" prefHeight="80.0" prefWidth="80.0" text="+">
+      <Button fx:id="ButtonAdd" layoutX="240.0" layoutY="320.0" mnemonicParsing="false" onAction="#ButtonAddAction" prefHeight="80.0" prefWidth="80.0" style="-fx-background-color: #ed7d31;" stylesheets="@CalcStyle.css" text="+">
          <font>
             <Font name="Arial" size="30.0" />
          </font>
-         <effect>
-            <Blend opacity="0.8">
-               <topInput>
-                  <Lighting>
-                     <bumpInput>
-                        <Shadow />
-                     </bumpInput>
-                     <light>
-                        <Light.Distant />
-                     </light>
-                  </Lighting>
-               </topInput>
-            </Blend>
-         </effect>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <styleClass>
+            <String fx:value="Button" />
+            <String fx:value="ButtonEqual" />
+         </styleClass>
       </Button>
-      <Button fx:id="Button4" layoutY="240.0" mnemonicParsing="false" onAction="#Button4Action" prefHeight="80.0" prefWidth="80.0" text="4">
+      <Button fx:id="Button4" layoutY="240.0" mnemonicParsing="false" onAction="#Button4Action" prefHeight="80.0" prefWidth="80.0" style="-fx-background-color: #d9d9d9;" stylesheets="@CalcStyle.css" text="4">
          <font>
             <Font name="Arial Bold" size="30.0" />
          </font>
-         <effect>
-            <Blend opacity="0.8">
-               <topInput>
-                  <Lighting>
-                     <bumpInput>
-                        <Shadow />
-                     </bumpInput>
-                     <light>
-                        <Light.Distant />
-                     </light>
-                  </Lighting>
-               </topInput>
-            </Blend>
-         </effect>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <styleClass>
+            <String fx:value="Button" />
+            <String fx:value="ButtonPlusMinus" />
+         </styleClass>
       </Button>
-      <Button fx:id="Button5" layoutX="80.0" layoutY="240.0" mnemonicParsing="false" onAction="#Button5Action" prefHeight="80.0" prefWidth="80.0" text="5">
+      <Button fx:id="Button5" layoutX="80.0" layoutY="240.0" mnemonicParsing="false" onAction="#Button5Action" prefHeight="80.0" prefWidth="80.0" style="-fx-background-color: #d9d9d9;" stylesheets="@CalcStyle.css" text="5">
          <font>
             <Font name="Arial Bold" size="30.0" />
          </font>
-         <effect>
-            <Blend opacity="0.8">
-               <topInput>
-                  <Lighting>
-                     <bumpInput>
-                        <Shadow />
-                     </bumpInput>
-                     <light>
-                        <Light.Distant />
-                     </light>
-                  </Lighting>
-               </topInput>
-            </Blend>
-         </effect>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <styleClass>
+            <String fx:value="Button" />
+            <String fx:value="Button0" />
+         </styleClass>
       </Button>
-      <Button fx:id="Button6" layoutX="160.0" layoutY="240.0" mnemonicParsing="false" onAction="#Button6Action" prefHeight="80.0" prefWidth="80.0" text="6">
+      <Button fx:id="Button6" layoutX="160.0" layoutY="240.0" mnemonicParsing="false" onAction="#Button6Action" prefHeight="80.0" prefWidth="80.0" style="-fx-background-color: #d9d9d9;" stylesheets="@CalcStyle.css" text="6">
          <font>
             <Font name="Arial Bold" size="30.0" />
          </font>
-         <effect>
-            <Blend opacity="0.8">
-               <topInput>
-                  <Lighting>
-                     <bumpInput>
-                        <Shadow />
-                     </bumpInput>
-                     <light>
-                        <Light.Distant />
-                     </light>
-                  </Lighting>
-               </topInput>
-            </Blend>
-         </effect>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <styleClass>
+            <String fx:value="Button" />
+            <String fx:value="ButtonPlusMinus" />
+         </styleClass>
       </Button>
-      <Button fx:id="ButtonSubstract" layoutX="240.0" layoutY="240.0" mnemonicParsing="false" onAction="#ButtonSubstractAction" prefHeight="80.0" prefWidth="80.0" text="−">
+      <Button fx:id="ButtonSubstract" layoutX="240.0" layoutY="240.0" mnemonicParsing="false" onAction="#ButtonSubstractAction" prefHeight="80.0" prefWidth="80.0" style="-fx-background-color: #ed7d31;" stylesheets="@CalcStyle.css" text="−">
          <font>
             <Font name="Arial" size="30.0" />
          </font>
-         <effect>
-            <Blend opacity="0.8">
-               <topInput>
-                  <Lighting>
-                     <bumpInput>
-                        <Shadow />
-                     </bumpInput>
-                     <light>
-                        <Light.Distant />
-                     </light>
-                  </Lighting>
-               </topInput>
-            </Blend>
-         </effect>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <styleClass>
+            <String fx:value="Button" />
+            <String fx:value="ButtonEqual" />
+         </styleClass>
       </Button>
-      <Button fx:id="Button7" layoutY="160.0" mnemonicParsing="false" onAction="#Button7Action" prefHeight="80.0" prefWidth="80.0" text="7">
+      <Button fx:id="Button7" layoutY="160.0" mnemonicParsing="false" onAction="#Button7Action" prefHeight="80.0" prefWidth="80.0" style="-fx-background-color: #d9d9d9;" stylesheets="@CalcStyle.css" text="7">
          <font>
             <Font name="Arial Bold" size="30.0" />
          </font>
-         <effect>
-            <Blend opacity="0.8">
-               <topInput>
-                  <Lighting>
-                     <bumpInput>
-                        <Shadow />
-                     </bumpInput>
-                     <light>
-                        <Light.Distant />
-                     </light>
-                  </Lighting>
-               </topInput>
-            </Blend>
-         </effect>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <styleClass>
+            <String fx:value="Button" />
+            <String fx:value="ButtonPlusMinus" />
+         </styleClass>
       </Button>
-      <Button fx:id="Button8" layoutX="80.0" layoutY="160.0" mnemonicParsing="false" onAction="#Button8Action" prefHeight="80.0" prefWidth="80.0" text="8">
+      <Button fx:id="Button8" layoutX="80.0" layoutY="160.0" mnemonicParsing="false" onAction="#Button8Action" prefHeight="80.0" prefWidth="80.0" style="-fx-background-color: #d9d9d9;" stylesheets="@CalcStyle.css" text="8">
          <font>
             <Font name="Arial Bold" size="30.0" />
          </font>
-         <effect>
-            <Blend opacity="0.8">
-               <topInput>
-                  <Lighting>
-                     <bumpInput>
-                        <Shadow />
-                     </bumpInput>
-                     <light>
-                        <Light.Distant />
-                     </light>
-                  </Lighting>
-               </topInput>
-            </Blend>
-         </effect>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <styleClass>
+            <String fx:value="Button" />
+            <String fx:value="Button0" />
+         </styleClass>
       </Button>
-      <Button fx:id="Button9" layoutX="160.0" layoutY="160.0" mnemonicParsing="false" onAction="#Button9Action" prefHeight="80.0" prefWidth="80.0" text="9">
+      <Button fx:id="Button9" layoutX="160.0" layoutY="160.0" mnemonicParsing="false" onAction="#Button9Action" prefHeight="80.0" prefWidth="80.0" style="-fx-background-color: #d9d9d9;" stylesheets="@CalcStyle.css" text="9">
          <font>
             <Font name="Arial Bold" size="30.0" />
          </font>
-         <effect>
-            <Blend opacity="0.8">
-               <topInput>
-                  <Lighting>
-                     <bumpInput>
-                        <Shadow />
-                     </bumpInput>
-                     <light>
-                        <Light.Distant />
-                     </light>
-                  </Lighting>
-               </topInput>
-            </Blend>
-         </effect>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <styleClass>
+            <String fx:value="Button" />
+            <String fx:value="ButtonPlusMinus" />
+         </styleClass>
       </Button>
-      <Button fx:id="ButtonMultiply" layoutX="240.0" layoutY="160.0" mnemonicParsing="false" onAction="#ButtonMultiplyAction" prefHeight="80.0" prefWidth="80.0" text="×">
+      <Button fx:id="ButtonMultiply" layoutX="240.0" layoutY="160.0" mnemonicParsing="false" onAction="#ButtonMultiplyAction" prefHeight="80.0" prefWidth="80.0" style="-fx-background-color: #ed7d31;" stylesheets="@CalcStyle.css" text="×">
          <font>
             <Font name="Arial" size="30.0" />
          </font>
-         <effect>
-            <Blend opacity="0.8">
-               <topInput>
-                  <Lighting>
-                     <bumpInput>
-                        <Shadow />
-                     </bumpInput>
-                     <light>
-                        <Light.Distant />
-                     </light>
-                  </Lighting>
-               </topInput>
-            </Blend>
-         </effect>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <styleClass>
+            <String fx:value="Button" />
+            <String fx:value="ButtonEqual" />
+         </styleClass>
       </Button>
-      <Button fx:id="ButtonClear1" layoutY="80.0" mnemonicParsing="false" onAction="#ButtonClearAction" prefHeight="80.0" prefWidth="80.0" text="CE">
+      <Button fx:id="ButtonClear" layoutY="80.0" mnemonicParsing="false" onAction="#ButtonClearAction" prefHeight="80.0" prefWidth="80.0" style="-fx-background-color: #bfbfbf;" stylesheets="@CalcStyle.css" text="C">
          <font>
             <Font name="Arial" size="24.0" />
          </font>
-         <effect>
-            <Blend opacity="0.8">
-               <topInput>
-                  <Lighting>
-                     <bumpInput>
-                        <Shadow />
-                     </bumpInput>
-                     <light>
-                        <Light.Distant />
-                     </light>
-                  </Lighting>
-               </topInput>
-            </Blend>
-         </effect>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <styleClass>
+            <String fx:value="Button" />
+            <String fx:value="ButtonPlusMinus" />
+         </styleClass>
       </Button>
-      <Button fx:id="ButtonClear2" layoutX="80.0" layoutY="80.0" mnemonicParsing="false" onAction="#ButtonClearAction" prefHeight="80.0" prefWidth="80.0" text="C">
+      <Button fx:id="ButtonPercent" layoutX="80.0" layoutY="80.0" mnemonicParsing="false" onAction="#ButtonPercentAction" prefHeight="80.0" prefWidth="80.0" style="-fx-background-color: #bfbfbf;" stylesheets="@CalcStyle.css" text="\%">
          <font>
             <Font name="Arial" size="24.0" />
          </font>
-         <effect>
-            <Blend opacity="0.8">
-               <topInput>
-                  <Lighting>
-                     <bumpInput>
-                        <Shadow />
-                     </bumpInput>
-                     <light>
-                        <Light.Distant />
-                     </light>
-                  </Lighting>
-               </topInput>
-            </Blend>
-         </effect>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <styleClass>
+            <String fx:value="Button" />
+            <String fx:value="Button0" />
+         </styleClass>
       </Button>
-      <Button fx:id="ButtonBackSpace" layoutX="160.0" layoutY="80.0" mnemonicParsing="false" onAction="#ButtonBackSpaceAction" prefHeight="80.0" prefWidth="80.0" text="←">
+      <Button fx:id="ButtonBackSpace" layoutX="160.0" layoutY="80.0" mnemonicParsing="false" onAction="#ButtonBackSpaceAction" prefHeight="80.0" prefWidth="80.0" style="-fx-background-color: #bfbfbf;" stylesheets="@CalcStyle.css" text="←">
          <font>
             <Font size="30.0" />
          </font>
-         <effect>
-            <Blend opacity="0.8">
-               <topInput>
-                  <Lighting>
-                     <bumpInput>
-                        <Shadow />
-                     </bumpInput>
-                     <light>
-                        <Light.Distant />
-                     </light>
-                  </Lighting>
-               </topInput>
-            </Blend>
-         </effect>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <styleClass>
+            <String fx:value="Button" />
+            <String fx:value="ButtonPlusMinus" />
+         </styleClass>
       </Button>
-      <Button fx:id="ButtonDivide" layoutX="240.0" layoutY="80.0" mnemonicParsing="false" onAction="#ButtonDivideAction" prefHeight="80.0" prefWidth="80.0" text="÷">
+      <Button fx:id="ButtonDivide" layoutX="240.0" layoutY="80.0" mnemonicParsing="false" onAction="#ButtonDivideAction" prefHeight="80.0" prefWidth="80.0" style="-fx-background-color: #ed7d31;" stylesheets="@CalcStyle.css" text="÷">
          <font>
             <Font size="30.0" />
          </font>
-         <effect>
-            <Blend opacity="0.8">
-               <topInput>
-                  <Lighting>
-                     <bumpInput>
-                        <Shadow />
-                     </bumpInput>
-                     <light>
-                        <Light.Distant />
-                     </light>
-                  </Lighting>
-               </topInput>
-            </Blend>
-         </effect>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <styleClass>
+            <String fx:value="Button" />
+            <String fx:value="ButtonEqual" />
+         </styleClass>
       </Button>
    </children>
    <cursor>
