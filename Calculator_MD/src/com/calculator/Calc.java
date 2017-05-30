@@ -21,7 +21,7 @@ public class Calc extends Application{
 		scene.getStylesheets().add(getClass().getResource("CalcStyle.css").toExternalForm());
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Calculator");
-		primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("iconCalc.png")));
+		primaryStage.getIcons().add(new Image(Calc.class.getClassLoader().getResourceAsStream("com/calculator/IconCalc.png")));
 		primaryStage.setResizable(false);
 		primaryStage.show();
 	}
