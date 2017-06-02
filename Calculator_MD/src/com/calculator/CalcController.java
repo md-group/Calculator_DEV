@@ -19,6 +19,8 @@ public class CalcController implements Initializable {
 	String result;
 	double per;
 
+	CalcAction calcAction = new CalcAction();
+
 	@FXML
 	private TextField textField;
 	@FXML
@@ -67,30 +69,30 @@ public class CalcController implements Initializable {
 		switch (event.getCode()) {
 		case BACK_SPACE:
 			text = "";
-			if (textField.getText().length() > 0) {
-				StringBuilder strB = new StringBuilder(textField.getText());
-				strB.deleteCharAt(textField.getText().length() - 1);
+			if (getTextField().getText().length() > 0) {
+				StringBuilder strB = new StringBuilder(getTextField().getText());
+				strB.deleteCharAt(getTextField().getText().length() - 1);
 				text = strB.toString();
-				textField.setText(text);
+				getTextField().setText(text);
 				break;
 			}
 		case ENTER:
 			try {
 				switch (operation) {
 				case '+':
-					num2 = Float.parseFloat(textField.getText());
+					num2 = Float.parseFloat(getTextField().getText());
 					text = "" + (num1 + num2);
 					break;
 				case '-':
-					num2 = Float.parseFloat(textField.getText());
+					num2 = Float.parseFloat(getTextField().getText());
 					text = "" + (num1 - num2);
 					break;
 				case '×':
-					num2 = Float.parseFloat(textField.getText());
+					num2 = Float.parseFloat(getTextField().getText());
 					text = "" + (num1 * num2);
 					break;
 				case '÷':
-					num2 = Float.parseFloat(textField.getText());
+					num2 = Float.parseFloat(getTextField().getText());
 					text = "" + (num1 / num2);
 					break;
 				default:
@@ -101,8 +103,8 @@ public class CalcController implements Initializable {
 				text = "Syntax error";
 			}
 			if (text.length() > 10)
-				textField.setText(text.substring(0, 10));
-			textField.setText(text);
+				getTextField().setText(text.substring(0, 10));
+			getTextField().setText(text);
 			result = text;
 		default:
 			break;
@@ -113,253 +115,153 @@ public class CalcController implements Initializable {
 	void KeyTyped(KeyEvent event) {
 		switch (event.getCharacter()) {
 		case "0":
-			action0();
+			calcAction.action0();
 			break;
 		case "1":
-			action1();
+			calcAction.action1();
 			break;
 		case "2":
-			action2();
+			calcAction.action2();
 			break;
 		case "3":
-			action3();
+			calcAction.action3();
 			break;
 		case "4":
-			action4();
+			calcAction.action4();
 			break;
 		case "5":
-			action5();
+			calcAction.action5();
 			break;
 		case "6":
-			action6();
+			calcAction.action6();
 			break;
 		case "7":
-			action7();
+			calcAction.action7();
 			break;
 		case "8":
-			action8();
+			calcAction.action8();
 			break;
 		case "9":
-			action9();
+			calcAction.action9();
 			break;
 		case "+":
-			actionAdd();
+			calcAction.actionAdd();
 			break;
 		case "/":
-			actionDivide();
+			calcAction.actionDivide();
 			break;
 		case "*":
-			actionMultiply();
+			calcAction.actionMultiply();
 			break;
 		case "-":
-			actionSubstract();
+			calcAction.actionSubstract();
 			break;
 		case ".":
-			actionComma();
+			calcAction.actionComma();
 			break;
 		}
 	}
 
 	@FXML
 	void Button0Action(ActionEvent event) {
-		action0();
-	}
-
-	public void action0() {
-		resultEqualsText();
-		text += "0";
-		textField.setText(text);
+		calcAction.action0();
 	}
 
 	@FXML
 	void Button1Action(ActionEvent event) {
-		action1();
-	}
-
-	private void action1() {
-		resultEqualsText();
-		text += "1";
-		textField.setText(text);
+		calcAction.action1();
 	}
 
 	@FXML
 	void Button2Action(ActionEvent event) {
-		action2();
-	}
-
-	private void action2() {
-		resultEqualsText();
-		text += "2";
-		textField.setText(text);
+		calcAction.action2();
 	}
 
 	@FXML
 	void Button3Action(ActionEvent event) {
-		action3();
-	}
-
-	private void action3() {
-		resultEqualsText();
-		text += "3";
-		textField.setText(text);
+		calcAction.action3();
 	}
 
 	@FXML
 	void Button4Action(ActionEvent event) {
-		action4();
-	}
-
-	private void action4() {
-		resultEqualsText();
-		text += "4";
-		textField.setText(text);
+		calcAction.action4();
 	}
 
 	@FXML
 	void Button5Action(ActionEvent event) {
-		action5();
-	}
-
-	private void action5() {
-		resultEqualsText();
-		text += "5";
-		textField.setText(text);
+		calcAction.action5();
 	}
 
 	@FXML
 	void Button6Action(ActionEvent event) {
-		action6();
-	}
-
-	private void action6() {
-		resultEqualsText();
-		text += "6";
-		textField.setText(text);
+		calcAction.action6();
 	}
 
 	@FXML
 	void Button7Action(ActionEvent event) {
-		action7();
-	}
-
-	private void action7() {
-		resultEqualsText();
-		text += "7";
-		textField.setText(text);
+		calcAction.action7();
 	}
 
 	@FXML
 	void Button8Action(ActionEvent event) {
-		action8();
-	}
-
-	private void action8() {
-		resultEqualsText();
-		text += "8";
-		textField.setText(text);
+		calcAction.action8();
 	}
 
 	@FXML
 	void Button9Action(ActionEvent event) {
-		action9();
-	}
-
-	private void action9() {
-		resultEqualsText();
-		text += "9";
-		textField.setText(text);
+		calcAction.action9();
 	}
 
 	@FXML
 	void ButtonAddAction(ActionEvent event) {
-		actionAdd();
-	}
-
-	private void actionAdd() {
-		if (text.length() > 0)
-			num1 = Float.parseFloat(textField.getText());
-		operation = '+';
-		text = "";
-		textField.setText("+");
+		calcAction.actionAdd();
 	}
 
 	@FXML
 	void ButtonCommaAction(ActionEvent event) {
-		actionComma();
-	}
-
-	private void actionComma() {
-		if (!text.contains("."))
-			text += ".";
-		else
-			text += "";
-		textField.setText(text);
+		calcAction.actionComma();
 	}
 
 	@FXML
 	void ButtonDivideAction(ActionEvent event) {
-		actionDivide();
-	}
-
-	private void actionDivide() {
-		if (text.length() > 0)
-			num1 = Float.parseFloat(textField.getText());
-		operation = '÷';
-		text = "";
-		textField.setText("÷");
+		calcAction.actionDivide();
 	}
 
 	@FXML
 	void ButtonMultiplyAction(ActionEvent event) {
-		actionMultiply();
-	}
-
-	private void actionMultiply() {
-		if (text.length() > 0)
-			num1 = Float.parseFloat(textField.getText());
-		operation = '×';
-		text = "";
-		textField.setText("×");
+		calcAction.actionMultiply();
 	}
 
 	@FXML
 	void ButtonSubstractAction(ActionEvent event) {
-		actionSubstract();
-	}
-
-	private void actionSubstract() {
-		if (text.length() > 0)
-			num1 = Float.parseFloat(textField.getText());
-		operation = '-';
-		text = "";
-		textField.setText("-");
+		calcAction.actionSubstract();
 	}
 
 	@FXML
 	void ButtonClearAction(ActionEvent event) {
 		text = "";
 		num1 = num2 = 0;
-		textField.setText(text);
+		getTextField().setText(text);
 	}
 
 	@FXML
 	void ButtonPercentAction(ActionEvent event) {
 		if (text.length() > 0)
-			per = Float.parseFloat(textField.getText());
+			per = Float.parseFloat(getTextField().getText());
 		text = "" + per * num1 / 100;
 		if (text.length() > 10)
-			textField.setText(text.substring(0, 8));
-		textField.setText(text);
+			getTextField().setText(text.substring(0, 8));
+		getTextField().setText(text);
 	}
 
 	@FXML
 	void ButtonBackSpaceAction(ActionEvent event) {
 		text = "";
-		if (textField.getText().length() > 0) {
-			StringBuilder strB = new StringBuilder(textField.getText());
-			strB.deleteCharAt(textField.getText().length() - 1);
+		if (getTextField().getText().length() > 0) {
+			StringBuilder strB = new StringBuilder(getTextField().getText());
+			strB.deleteCharAt(getTextField().getText().length() - 1);
 			text = strB.toString();
-			textField.setText(text);
+			getTextField().setText(text);
 		}
 	}
 
@@ -368,7 +270,7 @@ public class CalcController implements Initializable {
 		if (text.length() > 0) {
 			float sign = Float.parseFloat(text);
 			sign = sign * (-1);
-			textField.setText(String.valueOf(sign));
+			getTextField().setText(String.valueOf(sign));
 		}
 	}
 
@@ -377,19 +279,19 @@ public class CalcController implements Initializable {
 		try {
 			switch (operation) {
 			case '+':
-				num2 = Float.parseFloat(textField.getText());
+				num2 = Float.parseFloat(getTextField().getText());
 				text = "" + (num1 + num2);
 				break;
 			case '-':
-				num2 = Float.parseFloat(textField.getText());
+				num2 = Float.parseFloat(getTextField().getText());
 				text = "" + (num1 - num2);
 				break;
 			case '×':
-				num2 = Float.parseFloat(textField.getText());
+				num2 = Float.parseFloat(getTextField().getText());
 				text = "" + (num1 * num2);
 				break;
 			case '÷':
-				num2 = Float.parseFloat(textField.getText());
+				num2 = Float.parseFloat(getTextField().getText());
 				text = "" + (num1 / num2);
 				break;
 			default:
@@ -400,8 +302,8 @@ public class CalcController implements Initializable {
 			text = "Syntax error";
 		}
 		if (text.length() > 10)
-			textField.setText(text.substring(0, 10));
-		textField.setText(text);
+			getTextField().setText(text.substring(0, 10));
+		getTextField().setText(text);
 		result = text;
 	}
 
@@ -409,8 +311,8 @@ public class CalcController implements Initializable {
 		System.out.println("The pane loaded");
 	}
 
-	public void resultEqualsText() {
-		if (result == text)
-			text = "";
+	public TextField getTextField() {
+		return textField;
 	}
+
 }
